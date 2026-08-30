@@ -1,0 +1,6 @@
+{
+  "name": "Expense Tracker",
+  "description": "A modern, high-density financial management and expense tracking application with budgets, analytics, and goals.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
