@@ -2,7 +2,6 @@ package com.example.data.local
 
 import androidx.room.*
 import com.example.data.model.TransactionEntity
-import com.example.data.model.TransactionType
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -10,7 +9,7 @@ interface TransactionDao {
     @Query("SELECT * FROM transactions ORDER BY dateInMillis DESC, createdAt DESC")
     fun getAllTransactionsFlow(): Flow<List<TransactionEntity>>
 
-    @Query("SELECT * FROM transactions WHERE dateInMillis BETWEEN :startTime AND :endTime ORDER BY dateInMillis DESC")
+    @Query("SELECT * FROM transactions WHERE dateInMillis BETWEEN :startTime AND :endTime ORDER BY dateInMillis DESC, createdAt DESC")
     fun getTransactionsBetweenDates(startTime: Long, endTime: Long): Flow<List<TransactionEntity>>
 
     @Query("SELECT * FROM transactions WHERE id = :id LIMIT 1")
